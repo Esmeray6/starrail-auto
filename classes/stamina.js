@@ -10,6 +10,9 @@ module.exports = class Stamina extends require("./template.js") {
 			const generatedDS = sr.Utils.generateDS();
 			const region = sr.Utils.getAccountRegion(account.uid);
 
+			const timeout = Math.random() * 2 + 5;
+			await new Promise(resolve => setTimeout(resolve, timeout * 1000));
+
 			const res = await sr.Got({
 				url: "https://bbs-api-os.hoyolab.com/game_record/hkrpg/api/note",
 				prefixUrl: "",
@@ -21,6 +24,8 @@ module.exports = class Stamina extends require("./template.js") {
 					"x-rpc-app_version": "1.5.0",
 					"x-rpc-client_type": 5,
 					"x-rpc-language": "en-us",
+					"x-rpc-device_id": account.deviceId,
+					"x-rpc-device_fp": account.deviceFp,
 					Cookie: account.cookie,
 					DS: generatedDS
 				}

@@ -16,6 +16,10 @@ module.exports = class Account extends require("./template.js") {
 
 		this.cookie = data.cookie;
 
+		this.deviceId = data.deviceId ?? "";
+
+		this.deviceFp = data.deviceFp ?? "";
+
 		this.threshold = data.threshold ?? 150;
 
 		this.skipChecks = data.skipChecks ?? false;
@@ -83,6 +87,8 @@ module.exports = class Account extends require("./template.js") {
 					username: "Unknown",
 					region: "Unknown",
 					cookie: account.cookie,
+					deviceId: account.deviceId,
+					deviceFp: account.deviceFp,
 					threshold: account.threshold,
 					skipChecks: Boolean(account.uid === null)
 				});
@@ -169,6 +175,8 @@ module.exports = class Account extends require("./template.js") {
 				username: starrailAccount.nickname,
 				region: starrailAccount.region,
 				cookie: account.cookie,
+				deviceId: account.deviceId,
+				deviceFp: account.deviceFp,
 				threshold: account.threshold,
 				skipChecks: Boolean(account.uid === null)
 			});

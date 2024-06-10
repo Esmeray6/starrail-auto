@@ -8,12 +8,16 @@
         {
             "uid": 123,
             "cookie": "cookie_token_v2=xxx; account_mid_v2=xxx; ltuid_v2=xxx",
+            "deviceId": "xxx",
+            "deviceFp": "xxx",
             "threshold": 170
         },
         {
             "info": "null uid will still checks you in but won't be checking stamina, expedition, etc",
             "uid": null,
             "cookie": "cookie_token_v2=xxx; account_mid_v2=xxx; ltuid_v2=xxx",
+            "deviceId": "",
+            "deviceFp": "",
             "threshold": 170
         }
     ],
